@@ -1,3 +1,13 @@
-Slicing: recupera una parte di lista sul python.
-https://www.runoob.com/wp-content/uploads/2013/11/o99aU
-list comprehension: costruiamo una lista scrivendo delle parentesi quadre, le istruzione per generare
+Slicing: recupera una parte di lista sul python. 从列表中截取一段.
+https://www.runoob.com/wp-content/uploads/2013/11/o99aU.png
+list comprehension: costruiamo una lista scrivendo delle parentesi quadre, per fare il looping e le operazione matimatiche.
+Indexing: trova un posto nella lista.
+tuple（元组）: dentro il tuple, l'elemento può solo essere letto, ma non può essere cambiato.
+dictionary（字典）: è composto da keys e values. 字典由索引(key)和它对应的值value组成
+semplice operazione aritmetica:  round( ): Arrotondamento，abs(): Numero assoluto
+Formatting(格式化):capitalize()=头字母大写，title()=每个词头字母大写，upper()=全大写，lower()=全小写，swapped()=随机大小写
+len() Funzione che ti dice quanti elementi è presente nella stringa.
+count(): è usato per contare quante volte è presente nella lista.
+set: elimina gli elementi che compare più volte e si cambia l'ordine.
+zip(): è usato per compressione di due liste per formare un dizionario.
+times(x,y): usato per multiplicazione di due valori.
