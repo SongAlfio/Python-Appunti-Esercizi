@@ -5,7 +5,7 @@ Indexing: trova un posto nella lista.
 tuple（元组）: dentro il tuple, l'elemento può solo essere letto, ma non può essere cambiato.
 dictionary（字典）: è composto da keys e values. 字典由索引(key)和它对应的值value组成
 semplice operazione aritmetica:  round( ): Arrotondamento，abs(): Numero assoluto
-Formatting(格式化):capitalize()=头字母大写，title()=每个词头字母大写，upper()=全大写，lower()=全小写，swapped()=随机大小写
+Formatting(格式化):capitalize()=头字母大写，title()=每个词头字母大写，upper()=全大写，lower()=全小写，swapped()=调反大小写
 len() Funzione che ti dice quanti elementi è presente nella stringa.
 count(): è usato per contare quante volte è presente nella lista.
 set: elimina gli elementi che compare più volte e si cambia l'ordine.
