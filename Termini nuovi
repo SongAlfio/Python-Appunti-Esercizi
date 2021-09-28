@@ -11,3 +11,4 @@ count(): è usato per contare quante volte è presente nella lista.
 set: elimina gli elementi che compare più volte e si cambia l'ordine.
 zip(): è usato per compressione di due liste per formare un dizionario.
 times(x,y): usato per multiplicazione di due valori.
+Funzione: è un costrutto sintatico che permette di raggruppare un insieme di istruzioni. Una funzione può avere 0 o più parametri(argomenti). Una funzioene deve avere anche dei valori di uscita.
