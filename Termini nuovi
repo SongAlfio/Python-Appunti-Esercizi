@@ -90,5 +90,32 @@ within significa che un elemento è dentro in un'altro elemento
 intersection ci fa vedere solo la parte che è interseccato con un'altro elemento
 union ci fa vedere tutta la parte unita
 difference ci fa vedere la parte non sovrapposto
+se dobbiamo leggere un excel di tipo xls dobbiamo usare questi codici:
+! pip install xlrd==1.2.0
+import xlrd
 
 
+Geopandas Join spaziali
+possiamo usare pd.merge per unire 2 dataframe / 1 dataframe+ 1 geodataframe / 2 geodataframe che hanno le simile colonne
+nel pd.merge dobbiamo usare il how con 4 modi: "right" si pentende a destra, "left" si pentende a sinistra, "outer" si unisce tutti i dati dei due dataframe/geodataframe, "inner" si unisce solo i dati che esistono in tutti due dataframe/geodataframe.
+pd.merge si usa anche il on, che significa i 2 dataframe/geodataframe si uniscono dipende da quella colonna, si può usare anche right_on e left_on
+quando dobbiamo fare i grafici possiamo usare Sjoin solo a 2 geodataframe
+ma prima di usare sjoin dobbiamo eseguire questi codici per installare rtree, import modulo os è installazione di rtree e altro per far funzionare l'sjoin:
+
+import os
+!pip install rtree
+!curl -L http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar.gz | tar xz
+os.chdir("/content/spatialindex-src-1.8.5")
+!./configure
+!make
+!make install
+!ldconfig
+
+nel sjoin dobbiamo usare op per il posizione come "within" che serviamo a dire che un geodataframe è dentro a l'altra geodataframe, possiamo usare anche intersects ecc...
+nel sjoin il how funziona solo con "left" e "outer"
+per trasformare una colonna da object a intero possiamo fare(esempio):
+
+Bike_Area2 = Bike_Area.drop(Bike_Area[Bike_Area['id_via'].isnull()].index)
+Bike_Area2['id_via'] = Bike_Area2['id_via'].astype(int)
+
+possiamo usare .isin per vedere se un luogo contiene quello luogho
