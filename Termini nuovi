@@ -119,3 +119,4 @@ Bike_Area2 = Bike_Area.drop(Bike_Area[Bike_Area['id_via'].isnull()].index)
 Bike_Area2['id_via'] = Bike_Area2['id_via'].astype(int)
 
 possiamo usare .isin per vedere se un luogo contiene quello luogho
+as type ci serve a convertire il tipo di documento
