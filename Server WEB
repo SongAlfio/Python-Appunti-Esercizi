@@ -1,0 +1,13 @@
+Server WEB
+è un programma sempre attivo e che accetta le richieste da parte dei client (che si accende quando servono i clienti)
+I protocolli che usiamo sono: http / https(protetto)
+tipo di client: Browser(Italiano: sfogliare)
+tipi di server web: Apache, Nginx,       Node.js, Flask
+
+                   [Più lento ma già     [Più veloce, su 
+                              pronto]     JavaScript, noi
+                                          dobbiamo progr
+                                          ammare da solo]
+il cliente quando guarda un sito, fa la richiesta a Server web, e il Server web connette all'Hard disk al Home page, e restituisce il file HTML all’utente.
+
+hosting = ospite, la società che osto la società che non c’è posto da pubblicare
