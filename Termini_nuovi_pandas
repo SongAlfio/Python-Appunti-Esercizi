@@ -1,0 +1,20 @@
+Pandas
+df = pd.read serve a leggere un documento
+XXX = pd.dataframe serve a creare un dataframe
+df.head per le prime righe del dataframe
+df.tail per le ultime righe del dataframe
+iloc serve a localizzare la colonna con i numeri([:])
+loc serve a localizzare la colonna con le condizioni
+sort_values serve a ordinare la dataframe, e ascending serve a mettere in ordine crescente
+drop serve ad eliminare le righe o le colonne
+str.contains si usa per trovare le parole che contiene la specifica lettera o parola
+str.startswith si usa per trovare le parole che si iniziano con la specifica lettera o parola, c'è anche endswith
+se vuoi trovare più di una colonna devi fare una lista(mettere un [] in più).
+%%time serve a vedere quanto tempo ci vuole per eseguire quel commando.
+groupby.first serve a mettere nel primo posto la colonna inserita
+sum serve a sommare i numeri nelle colonne
+il mean si usa per fare la media di numeri in dataframe
+df.to_excel('./file.xlsx') serve a creare un documento di tipo xlsx
+df.to_csv('./file.csv') serve a creare un documento di tipo csv
+df.to_json('./file.json') serve a creare un documento di tipo json
+df.info serve a vedere le informazioni della dataframe
