@@ -1,0 +1,16 @@
+MatPlotlib
+possono essere diverse linee come: "m.", "r", "m--" ecc...
+plt.figure serve a creare il grafico
+ax.set_xlabel serve a nominare l'asse x
+ax.set_ylabel serve a nominare l'asse y
+suptitle serve a nominare il titolo del grafico(sopra)
+show serve a dimostrare il grafico
+ax.pie serve a fare la grafico a torta
+bar serve a fare il grafico a barre
+barh serve a fare il grafico a barre orrizontale
+fig.set_figwidth Regola la larghezza del grafico
+fig.set_figheight Regola l'altezza del grafico
+fig.autofmt_xdate(rotation=90) Modifica la rotazione dei nomi dell'asse X
+ax.set_ylim([0, 20000000]) Cambia il limite dei valori sull'asse Y
+ax.set_yticklabels(np.arange(0, 20000001, step=2000000)) Cambia i nomi dei valori riportati sull'asse Y
+ax.set_yticks(np.arange(0, 20000001, step=2000000)) Cambia la frequenza con cui viene visualizzato un nome sull'asse Y
