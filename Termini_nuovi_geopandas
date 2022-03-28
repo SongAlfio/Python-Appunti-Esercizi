@@ -1,0 +1,56 @@
+Geopandas
+Prima di fare qualsiasi cosa dobbiamo installare(!pip install) e importare geopandas
+Per leggere un file zippato si usa Geopandas.read_file('...')
+type è usato per vedere il tipo di dataframe 
+conxtily è una mappa che ha il epsg di 3857
+per funzionare il contextily dobbiamo usare to_crs()
+per ordinare il geodataframe possiamo usare: geopandas.sort_values(by='AREA',ascending=False)
+geometry è usato per vedere la tipologia della forma,geometry.area per vedere l'area di quel luogo
+per avere i colori diversi per ogni luogo possiamo usare il "legend"(colunm='',legend=True) 
+squeeze è usato per tirare la figura dalla mappa, diventa un'unica figura
+unary_union serve a unire più forme di figura in un'unica figura
+alpha serve a far diventare trasparente la figura.
+add_basemap serve a creare la mappa di base usando il contextily
+dentro il basemap possiamo cambiare lo stile della mappa usando il source
+posssiamo mettere una figura il un'altra figura usando ax=ax
+edgecolor è usato per scegliere il colore del bordo
+facecolor è usato per scegliere il colore dell'area
+Quando compare "The indices of the two GeoSeries are different", dobbiamo usare Geometry.squeeze o unary.union
+Buffer è usato per ingrandire la figura geometrica
+quando dobbiamo controllare se un elemento è nella geodataframe, possiamo usare "not in list(dataframe['colonna'])"
+intersects significa che due figure si intersecano
+touches significa che le due figure si toccano
+within significa che un elemento è dentro in un'altro elemento
+intersection ci fa vedere solo la parte che è interseccato con un'altro elemento
+union ci fa vedere tutta la parte unita
+difference ci fa vedere la parte non sovrapposto
+se dobbiamo leggere un excel di tipo xls dobbiamo usare questi codici:
+! pip install xlrd==1.2.0
+import xlrd
+
+
+Geopandas Join spaziali
+possiamo usare pd.merge per unire 2 dataframe / 1 dataframe+ 1 geodataframe / 2 geodataframe che hanno le simile colonne
+nel pd.merge dobbiamo usare il how con 4 modi: "right" si pentende a destra, "left" si pentende a sinistra, "outer" si unisce tutti i dati dei due dataframe/geodataframe, "inner" si unisce solo i dati che esistono in tutti due dataframe/geodataframe.
+pd.merge si usa anche il on, che significa i 2 dataframe/geodataframe si uniscono dipende da quella colonna, si può usare anche right_on e left_on
+quando dobbiamo fare i grafici possiamo usare Sjoin solo a 2 geodataframe
+ma prima di usare sjoin dobbiamo eseguire questi codici per installare rtree, import modulo os è installazione di rtree e altro per far funzionare l'sjoin:
+
+import os
+!pip install rtree
+!curl -L http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar.gz | tar xz
+os.chdir("/content/spatialindex-src-1.8.5")
+!./configure
+!make
+!make install
+!ldconfig
+
+nel sjoin dobbiamo usare op per il posizione come "within" che serviamo a dire che un geodataframe è dentro a l'altra geodataframe, possiamo usare anche intersects ecc...
+nel sjoin il how funziona solo con "left" e "outer"
+per trasformare una colonna da object a intero possiamo fare(esempio):
+
+Bike_Area2 = Bike_Area.drop(Bike_Area[Bike_Area['id_via'].isnull()].index)
+Bike_Area2['id_via'] = Bike_Area2['id_via'].astype(int)
+
+possiamo usare .isin per vedere se un luogo contiene quello luogho
+as type ci serve a convertire il tipo di documento
