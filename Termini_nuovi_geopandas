@@ -20,7 +20,7 @@ Buffer è usato per ingrandire la figura geometrica
 quando dobbiamo controllare se un elemento è nella geodataframe, possiamo usare "not in list(dataframe['colonna'])"
 intersects significa che due figure si intersecano
 touches significa che le due figure si toccano
-within significa che un elemento è dentro in un'altro elemento
+within significa che un elemento è dentro in un'altro elemento, prima l'oggetto più grande e tra parentesi l'oggetto più piccolo
 intersection ci fa vedere solo la parte che è interseccato con un'altro elemento
 union ci fa vedere tutta la parte unita
 difference ci fa vedere la parte non sovrapposto
