@@ -54,4 +54,4 @@ Bike_Area2['id_via'] = Bike_Area2['id_via'].astype(int)
 
 possiamo usare .isin per vedere se un luogo contiene quello luogho
 as type ci serve a convertire il tipo di documento
-<img width=“964” alt=“java 8 and prio java 8  array review example” src=“https://github.com/jaimehernan95/arrayReview-java/images/%20arrayExample.png 195”>
+<img width=“964” alt=“java 8 and prio java 8  array review example” src=“https://github.com/jaimehernan95/arrayReview-java/blob/master/images/%20arrayExample.png”>
