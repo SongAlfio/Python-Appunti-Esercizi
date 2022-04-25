@@ -55,5 +55,3 @@ Bike_Area2['id_via'] = Bike_Area2['id_via'].astype(int)
 possiamo usare .isin per vedere se un luogo contiene quello luogho
 as type ci serve a convertire il tipo di documento
 
-<img src=“https://github.com/KrisKasprzak/ILI9341_t3_controls 680”>
-Equalizer
