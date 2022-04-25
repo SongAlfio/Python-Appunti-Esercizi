@@ -14,3 +14,4 @@ fig.autofmt_xdate(rotation=90) Modifica la rotazione dei nomi dell'asse X
 ax.set_ylim([0, 20000000]) Cambia il limite dei valori sull'asse Y
 ax.set_yticklabels(np.arange(0, 20000001, step=2000000)) Cambia i nomi dei valori riportati sull'asse Y
 ax.set_yticks(np.arange(0, 20000001, step=2000000)) Cambia la frequenza con cui viene visualizzato un nome sull'asse Y
+plt.xticks(x) può cambiare il nome dell'asse x, e plt.yticks(y) per il nome delle etichette sull'asse y
