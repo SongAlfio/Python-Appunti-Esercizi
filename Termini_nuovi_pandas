@@ -20,6 +20,9 @@ df.to_excel('./file.xlsx') serve a creare un documento di tipo xlsx
 df.to_csv('./file.csv') serve a creare un documento di tipo csv
 df.to_json('./file.json') serve a creare un documento di tipo json
 df.info serve a vedere le informazioni della dataframe
+astype() viene usato per cambiare il tipo di valore
+dtypes serve a vedere il tipo di valore
+isnull() serve a controllare se ci sono le righe vuote
 
 se vogliamo trovare il valore più basso/più alto in una colonna possiamo fare così:
 Riga_MIN = Dataframe[Dataframe['Colonna']==Dataframe.Colonna.min()]
