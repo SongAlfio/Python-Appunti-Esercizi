@@ -47,6 +47,7 @@ os.chdir("/content/spatialindex-src-1.8.5")
 !ldconfig
 
 nel sjoin dobbiamo usare op per il posizione come "within" che serviamo a dire che un geodataframe è dentro a l'altra geodataframe, possiamo usare anche intersects ecc...
+la sjoin ha gli attributti: Dataframe1; Dataframe2; how; op)
 nel sjoin il how funziona solo con "left" e "outer"
 per trasformare una colonna da object a intero possiamo fare(esempio):
 
