@@ -18,3 +18,7 @@ df.to_excel('./file.xlsx') serve a creare un documento di tipo xlsx
 df.to_csv('./file.csv') serve a creare un documento di tipo csv
 df.to_json('./file.json') serve a creare un documento di tipo json
 df.info serve a vedere le informazioni della dataframe
+
+possiamo usare questo codice per controllare se in una lista contiene il testo inserito o no:
+Ristoranti2=Ristoranti['denominazione_pe'].str.lower().dropna().to_list()
+if list(filter(lambda x: Posto in x,Ristoranti2))==None:
