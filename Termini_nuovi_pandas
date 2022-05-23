@@ -19,6 +19,10 @@ df.to_csv('./file.csv') serve a creare un documento di tipo csv
 df.to_json('./file.json') serve a creare un documento di tipo json
 df.info serve a vedere le informazioni della dataframe
 
+possiamo usare pd.merge per unire 2 dataframe / 1 dataframe+ 1 geodataframe / 2 geodataframe che hanno le simile colonne
+nel pd.merge dobbiamo usare il how con 4 modi: "right" si pentende a destra, "left" si pentende a sinistra, "outer" si unisce tutti i dati dei due dataframe/geodataframe, "inner" si unisce solo i dati che esistono in tutti due dataframe/geodataframe.
+pd.merge si usa anche il on, che significa i 2 dataframe/geodataframe si uniscono dipende da quella colonna, si può usare anche right_on e left_on
+
 possiamo usare questo codice per controllare se in una lista contiene il testo inserito o no:
 Ristoranti2=Ristoranti['denominazione_pe'].str.lower().dropna().to_list()
 if list(filter(lambda x: Posto in x,Ristoranti2))==None:
