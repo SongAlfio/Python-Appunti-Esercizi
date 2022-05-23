@@ -27,6 +27,9 @@ isnull() serve a controllare se ci sono le righe vuote
 se vogliamo trovare il valore più basso/più alto in una colonna possiamo fare così:
 Riga_MIN = Dataframe[Dataframe['Colonna']==Dataframe.Colonna.min()]
 
+per vedere le colonne di due dataframe che hanno il nome uguale possiamo fare così:
+Dataframe1[Dataframe1['Colonna1'].isin(Dataframe2['Colonna2'])]
+
 possiamo usare pd.merge per unire 2 dataframe / 1 dataframe+ 1 geodataframe / 2 geodataframe che hanno le simile colonne
 il merge ha gli attributti: Dataframe1; Dataframe2; how; on; left_on; right_on)
 nel pd.merge dobbiamo usare il how con 4 modi: "right" si pentende a destra, "left" si pentende a sinistra, "outer" si unisce tutti i dati dei due dataframe/geodataframe, "inner" si unisce solo i dati che esistono in tutti due dataframe/geodataframe.
