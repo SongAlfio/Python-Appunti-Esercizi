@@ -15,3 +15,13 @@ ax.set_ylim([0, 20000000]) Cambia il limite dei valori sull'asse Y
 ax.set_yticklabels(np.arange(0, 20000001, step=2000000)) Cambia i nomi dei valori riportati sull'asse Y
 ax.set_yticks(np.arange(0, 20000001, step=2000000)) Cambia la frequenza con cui viene visualizzato un nome sull'asse Y
 plt.xticks(x) può cambiare il nome dell'asse x, e plt.yticks(y) per il nome delle etichette sull'asse y
+
+questo è un semplice esempio di un grafico a torta:
+x = np.arange(len(nome dataframe['nome colonna']))
+fig = plt.figure(figsize=[10,10])
+plt.rcParams.update({'font.size': 15})
+ax = plt.axes()
+cols = ['c','b','hotpink','yellow','red','brown','lime'] 
+
+ax.pie(lista di x,startangle=90,colors=cols,labels=lista di una colonna dei nomi,autopct='%1.1f%%')
+plt.show()
