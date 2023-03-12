@@ -1,6 +1,6 @@
 Pandas
 df = pd.read_xxx serve a leggere un documento
-df = pd.read_excel('/content/drive/MyDrive/default of credit card clients.xls', header = 1) serve a dire che prendiamo la seconda riga per dare il nome alla colonna
+df = pd.read_excel('/content/drive/MyDrive/default of credit card clients.xls', header = 1,sep=';') serve a dire che prendiamo la seconda riga per dare il nome alla colonna, e la separazione del file è di ';'
 df = pd.dataframe serve a creare un dataframe
 df.head per le prime righe del dataframe
 df.tail per le ultime righe del dataframe
