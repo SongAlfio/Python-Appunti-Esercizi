@@ -45,7 +45,7 @@ print(f'y_train = {y_train[:10]}')                                     #mostra g
 
 
 from sklearn.neighbors import KNeighborsClassifier                     #importiamo il metodo che vogliamo utilizzara (tra i tanti disponibili...)
-neigh = KNeighborsClassifier(n_neighbors=11)                           #impostiamo l'unico parametro (il numero di vicini)
+neigh = KNeighborsClassifier(n_neighbors=11)                           #impostiamo l'unico parametro (il numero di vicini), lo cambiamo a secondo di quanti campioni(样本) abbiamo
                                                                        #prima parte: dobbiamo fare in modo che il metodo impari dalle informazioni a disposizione
                                                                        #notare che il metodo utilizza sia X_train che y_train, perché deve capire se sta predicendo correttamente
 neigh.fit(X_train, y_train)                                            #"alleniamo" il metodo con i dati del training set
@@ -70,3 +70,21 @@ plt.show()                                                             #mostriam
 
 
 print(classification_report(y_test, predict))                          #prindiamo il accuracy di f1-score per identificare se il metodo è andato bene o no
+
+
+from sklearn.model_selection import GridSearchCV                       #qua abbiamo il metodo di fare il valore migliore del k
+from sklearn import datasets
+from sklearn.neighbors import KNeighborsClassifier
+
+i = []
+iris = datasets.load_iris()
+x = iris['data']
+y = iris['target']
+
+parameter = {'n_neighbors':[1,3,5,7,9,11]}                            #lo cambiamo a secondo di quanti campioni(样本) abbiamo
+knn = KNeighborsClassifier()
+
+clf = GridSearchCV(knn,parameter,cv=5)
+clf.fit(x,y)
+
+print(f'il valore di K più buono è {(clf.best_params_)["n_neighbors"]},',"la percentuale è: %.2f"%clf.best_score_)
