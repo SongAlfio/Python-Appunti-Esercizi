@@ -1,4 +1,4 @@
-from tabulate import tabulate                                     è una libreria che serve a costruire una tabella
+from tabulate import tabulate                                     #è una libreria che serve a costruire una tabella
 info = ['Alcohol', 'MA', 'Ash', 'AA', 'Magnesium', 'TP', 'Flavanoids', 'NF', 'PAc', 'CI', 'Hue', 'OD280/OD315', 'Proline']
 daScoprire = [12.37, 1.07, 2.1, 18.5, 88, 3.52, 3.75, .24, 1.95, 4.5, 1.04, 2.77, 660] 
 print(tabulate([daScoprire], headers=info))
@@ -28,37 +28,37 @@ x=df[:,1:]
 y=df[:,0]
 
 
-import collections                                                ora contiamo le classi che sono presenti nella y per vedere se corrispondono a quanto trovato nel dataframe
+import collections                                                #ora contiamo le classi che sono presenti nella y per vedere se corrispondono a quanto trovato nel dataframe
 collections.Counter(y)
 
 
-from sklearn.model_selection import train_test_split              suddividiamo ora i dati in due dataset, uno per 'allenare' il metodo (training set) 
-                                                                  e l'altro per testarne l'efficacia (test set). Facciamo in modo che il training set sia il 70% del totale
-                                                                  suddivide le osservazioni nei due insiemi
+from sklearn.model_selection import train_test_split              #suddividiamo ora i dati in due dataset, uno per 'allenare' il metodo (training set) 
+                                                                  #e l'altro per testarne l'efficacia (test set). Facciamo in modo che il training set sia il 70% del totale
+                                                                  #suddivide le osservazioni nei due insiemi
 X_train, X_test, y_train, y_test = train_test_split(x, y, 
-                                                    test_size = 0.33,                       y default is 75%-25%
-                                                                                            shuffle is set True by default,
-                                                    stratify = y,                           per mantenere le proporzioni che ci sono nei dati di partenza
-                                                    random_state = 123)                     fix random seed for replicability
+                                                    test_size = 0.33,                       #y default is 75%-25%
+                                                                                            #shuffle is set True by default,
+                                                    stratify = y,                           #per mantenere le proporzioni che ci sono nei dati di partenza
+                                                    random_state = 123)                     #fix random seed for replicability
 
 
 X_train.shape,y_train.shape,X_test.shape,y_test.shape
 
 
-from sklearn import tree                                          importiamo il metodo che vogliamo utilizzara (tra i tanti disponibili...)
-                                                                  impostiamo i parametri del metodo
-tree_clf = tree.DecisionTreeClassifier(criterion="gini",          criteri per stabilire come splittare
-max_depth=4,                                                      profondità dell'albero per evitare l'overfitting
-min_samples_split=30,                                             dimensione minima del sottogruppo a cui fermarsi (no more split)
-max_leaf_nodes=6,                                                 numero dei nodi foglia
-min_samples_leaf=4                                                numero di campioni per essere una foglia
+from sklearn import tree                                          #importiamo il metodo che vogliamo utilizzara (tra i tanti disponibili...)
+                                                                  #impostiamo i parametri del metodo
+tree_clf = tree.DecisionTreeClassifier(criterion="gini",          #criteri per stabilire come splittare
+max_depth=4,                                                      #profondità dell'albero per evitare l'overfitting
+min_samples_split=30,                                             #dimensione minima del sottogruppo a cui fermarsi (no more split)
+max_leaf_nodes=6,                                                 #numero dei nodi foglia
+min_samples_leaf=4                                                #numero di campioni per essere una foglia
 )
 
-tree_clf.fit(X_train,y_train)                                     prima parte: dobbiamo fare in modo che il metodo impari dalle informazioni a disposizione
-predict = tree_clf.predict(X_test)                                seconda parte: vediamo se il metodo ha imparato bene facendogli prevedere i risultati
-                                                                  visualizziamo il risultato (solo i primi dieci pazienti)
-print(f'dati predetti dal metodo =                {predict[:10]}')             dati predetti dal metodo
-print(f'dati reali presenti nel dataset di test = {y_test[:10]}')              dati effettivi presenti nel test set
+tree_clf.fit(X_train,y_train)                                     #prima parte: dobbiamo fare in modo che il metodo impari dalle informazioni a disposizione
+predict = tree_clf.predict(X_test)                                #seconda parte: vediamo se il metodo ha imparato bene facendogli prevedere i risultati
+                                                                  #visualizziamo il risultato (solo i primi dieci pazienti)
+print(f'dati predetti dal metodo =                {predict[:10]}')             #dati predetti dal metodo
+print(f'dati reali presenti nel dataset di test = {y_test[:10]}')              #dati effettivi presenti nel test set
 
 
 from mlxtend.plotting import plot_confusion_matrix
@@ -68,12 +68,12 @@ plot_confusion_matrix(confusion_matrix(y_test, predict))
 plt.show()
 
 
-print(classification_report(y_test, predict))                      save the feature list into a vector (sono i nomi delle colonne del dataset)
+print(classification_report(y_test, predict))                      #save the feature list into a vector (sono i nomi delle colonne del dataset)
 features=list(df.columns.values)
 import graphviz
 dot_data = tree.export_graphviz(tree_clf, out_file=None, 
-                     feature_names=features[0:-1],                 qua modifichiamo il feature a secondo della seconda parte della riga 27
-                     class_names=['0','1','2'],                    qua possiamo modificare il numero a secondo di quanti target dobbiamo verificare
+                     feature_names=features[0:-1],                 #qua modifichiamo il feature a secondo della seconda parte della riga 27
+                     class_names=['0','1','2'],                    #qua possiamo modificare il numero a secondo di quanti target dobbiamo verificare
                      filled=True, rounded=True,  
                      special_characters=True)  
 graph = graphviz.Source(dot_data)
