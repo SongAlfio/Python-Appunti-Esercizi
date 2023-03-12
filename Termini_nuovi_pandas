@@ -1,28 +1,34 @@
 Pandas
-df = pd.read serve a leggere un documento
-XXX = pd.dataframe serve a creare un dataframe
+df = pd.read_xxx serve a leggere un documento
+df = pd.read_excel('/content/drive/MyDrive/default of credit card clients.xls', header = 1) serve a dire che prendiamo la seconda riga per dare il nome alla colonna
+df = pd.dataframe serve a creare un dataframe
 df.head per le prime righe del dataframe
 df.tail per le ultime righe del dataframe
 iloc serve a localizzare la colonna con i numeri([:])
 loc serve a localizzare la colonna con le condizioni
 sort_values serve a ordinare la dataframe, e ascending serve a mettere in ordine crescente c'è anche l'attributto inplace per sostituire valore.
-drop(columns='') serve ad eliminare le righe o le colonne
+drop(index=['Riga'], axis=0) serve ad eliminare le righe, axis = 0 è la riga
+drop(columns=['Colonna'],axis=1) serve ad eliminare le righe o le colonne, axis = 1 è la colonna
 dropna() serve ad eliminare le righe vuote
 dropduplicates() serve ad eliminare i duplicati
+df.rename(columns={"Colonna_Prima": "Colonna_Dopo", "Colonna_Prima_2": "Colonna_Dopo_2"}) serve a cambiare il nome della colonna, se vogliamo cambiare il nome della riga possiamo usare index={'':''}
+df.insert(0, "col1", [100, 100], allow_duplicates=True) serve a inserire una colonna, il 0 è la posizione della colonna, poi è il nome della colonna, poi c'è il valore, alla fine c'è consentire duplicati.
 str.contains si usa per trovare le parole che contiene la specifica lettera o parola
 str.startswith si usa per trovare le parole che si iniziano con la specifica lettera o parola, c'è anche endswith
 se vuoi trovare più di una colonna devi fare una lista(mettere un [] in più).
 %%time serve a vedere quanto tempo ci vuole per eseguire quel commando.
-groupby.first serve a mettere nel primo posto la colonna inserita
-sum serve a sommare i numeri nelle colonne
-il mean si usa per fare la media di numeri in dataframe
+groupby(['Colonna']).first() serve a mettere nel primo posto la colonna inserita
+groupby(['Colonna']).count() serve a contare quanti righe di valori uguali ci sono in quella colonna
+groupby(['Colonna']).sum() serve a sommare i numeri nelle colonne
+groupby(['Colonna']).mean() si usa per fare la media di numeri in dataframe
 df.to_excel('./file.xlsx') serve a creare un documento di tipo xlsx
 df.to_csv('./file.csv') serve a creare un documento di tipo csv
 df.to_json('./file.json') serve a creare un documento di tipo json
 df.info serve a vedere le informazioni della dataframe
-astype() viene usato per cambiare il tipo di valore
-dtypes serve a vedere il tipo di valore
-isnull() serve a controllare se ci sono le righe vuote
+df['Colonna'].astype('Type') viene usato per cambiare il tipo di valore
+df['Colonna'].dtypes serve a vedere il tipo di valore
+df.isnull() serve a controllare se ci sono le righe vuote
+
 
 se vogliamo trovare il valore più basso/più alto in una colonna possiamo fare così:
 Riga_MIN = Dataframe[Dataframe['Colonna']==Dataframe.Colonna.min()]
