@@ -1,0 +1,72 @@
+print(df.groupby('Colonna').size())                                    serve a vedere la grandezza dei dati che abbiamo in quella colonna
+
+
+%matplotlib inline                                                     serve a costruire il grafico della colonna
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.countplot(x="Colonna", data=df)
+plt.title("xxx")
+plt.xlabel("Classes")
+plt.ylabel("Counts")
+plt.show()
+
+
+import numpy as np                                                     
+df1 = df.to_numpy()
+x=df1[:,0:-1]                                                          prendiamo tutti i dati tranne l'ultima colonna -> variabili indipendenti, osservazioni
+y=df1[:,-1]                                                            prendiamo solo l'ultima colonna -> variabile dipendente, target
+import collections                                                     mostrare i numeri in numpy
+collections.Counter(y)
+
+
+print(x[:10])                                                          mostra gli ultimi 10 dati
+print(f'y = {y[:10]}')
+np.set_printoptions(suppress=True)                                     semplifica la scrittura scientifica
+print(x[:10])
+print(f'y = {y[:10]}')
+
+
+!pip install sklearn                                                   installa la libreria di sklearn per allenare l'intelligenza artificiale
+                                                                       come per altri metodi di ML, dobbiamo prendere i nostri valori delle osservazioni e splittarle in due insiemi:
+                                                                       training set: è il sottoinsieme delle osservazioni che serve al nostro metodo per imparare
+                                                                       test set: è il sottoinsieme delle osservazioni che serve al nostro metodo per capire se ha imparato bene
+from sklearn.model_selection import train_test_split                   suddivide le osservazioni nei due insiemi
+X_train, X_test, y_train, y_test = train_test_split(x, y, 
+test_size = 0.33,                                                      by default is 75%-25%     shuffle is set True by default,
+stratify = y,                                                          per mantenere le proporzioni che ci sono nei dati di partenza
+random_state = 123)                                                    fix random seed for replicability
+
+
+X_train.shape,y_train.shape,X_test.shape,y_test.shape                  serve a vedere il rapporto tra X_train,y_train,X_test,y_test
+
+
+print(X_train[:10])
+print(f'y_train = {y_train[:10]}')                                     mostra gli ultimi 10 dati di X da allenare e y da allenare
+
+
+from sklearn.neighbors import KNeighborsClassifier                     importiamo il metodo che vogliamo utilizzara (tra i tanti disponibili...)
+neigh = KNeighborsClassifier(n_neighbors=11)                           impostiamo l'unico parametro (il numero di vicini)
+                                                                       prima parte: dobbiamo fare in modo che il metodo impari dalle informazioni a disposizione
+                                                                       notare che il metodo utilizza sia X_train che y_train, perché deve capire se sta predicendo correttamente
+neigh.fit(X_train, y_train)                                            "alleniamo" il metodo con i dati del training set
+                                                                       seconda parte: vediamo se il metodo ha imparato bene facendogli prevedere i risultati 
+                                                                       notare che c'è solo X perché le y devono essere previste dal metodo
+predict = neigh.predict(X_test)                                        proviamo a fare una previsione sui dati del test set
+                                                                       visualizziamo il risultato (solo i primi dieci pazienti)
+print(f'dati predetti dal metodo =                {predict[:10]}')     dati predetti dal metodo
+print(f'dati reali presenti nel dataset di test = {y_test[:10]}')      dati effettivi presenti nel test set
+
+
+!pip install mlxtend                                                   installa la libreria di mlxtend per avere il grafico di vero/falso positivo/negativo
+
+
+from mlxtend.plotting import plot_confusion_matrix
+from matplotlib import pyplot as plt
+from sklearn.metrics import confusion_matrix, classification_report
+
+plot_confusion_matrix(confusion_matrix(y_test, predict), cmap=plt.cm.Dark2)
+plt.show()                                                             mostriamo il grafico, a sinistra è il risultato vero, sotto è il risultato del robot
+
+
+
+print(classification_report(y_test, predict))                          prindiamo il accuracy di f1-score per identificare se il metodo è andato bene o no
