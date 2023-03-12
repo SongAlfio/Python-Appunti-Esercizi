@@ -25,6 +25,7 @@ df.to_excel('./file.xlsx') serve a creare un documento di tipo xlsx
 df.to_csv('./file.csv') serve a creare un documento di tipo csv
 df.to_json('./file.json') serve a creare un documento di tipo json
 df.info serve a vedere le informazioni della dataframe
+df['Colonna'] = df['Colonna'].replace('xxx',0) serve a sostituire una colonna di stringa ad un numero intero
 df['Colonna'].astype('Type') viene usato per cambiare il tipo di valore
 df['Colonna'].dtypes serve a vedere il tipo di valore
 df.isnull() serve a controllare se ci sono le righe vuote
