@@ -13,8 +13,8 @@ plt.show()
 
 import numpy as np                                                     
 df1 = df.to_numpy()
-x=df1[:,0:-1]                                                          #prendiamo tutti i dati tranne l'ultima colonna -> variabili indipendenti, osservazioni
-y=df1[:,-1]                                                            #prendiamo solo l'ultima colonna -> variabile dipendente, target
+x=df1[:,0:-1]                                                          #prendiamo tutti i dati tranne la colonna di target -> variabili indipendenti, osservazioni
+y=df1[:,-1]                                                            #prendiamo solo la colonna di target -> variabile dipendente, target
 import collections                                                     #mostrare i numeri in numpy
 collections.Counter(y)
 
