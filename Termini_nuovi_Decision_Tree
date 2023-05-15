@@ -82,7 +82,7 @@ graph
 
 
 daScoprire = [[1.58748169850998,0.00546117248979446,-1.37370216119175,2.16798060689537,-11.6280417992599,11.4742541860579,-7.9980890019126,5.75985089368138,-0.733238227803793,-3.07585758755774,3.09265899141867,-1.52261836853813]] 
-predict = neigh.predict(daScoprire)                               #questo è il codice per classificare i dati fatti da noi
+predict = tree_clf.predict(daScoprire)                               #questo è il codice per classificare i dati fatti da noi
 predict
 
 
