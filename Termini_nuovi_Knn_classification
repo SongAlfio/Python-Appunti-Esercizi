@@ -88,3 +88,9 @@ clf = GridSearchCV(knn,parameter,cv=5)
 clf.fit(x,y)
 
 print(f'il valore di K più buono è {(clf.best_params_)["n_neighbors"]},',"la percentuale è: %.2f"%clf.best_score_)
+
+
+
+daScoprire = [[2,0.66307,1.2065,0.32559,0.94952,0.99649,0.75954,0.013388,0.032621,0.021815,0.097143,0.0093485,0.0040284,3.6303e-05,0.5341]] 
+predict = neigh.predict(daScoprire)                                #per verificare i dati fatti da noi usiamo questo codice
+predict
